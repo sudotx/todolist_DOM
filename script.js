@@ -1,5 +1,7 @@
-const taskInput = document.getElementById("newTask");
 const taskList = document.getElementById("taskList");
+const addTask = document.getElementById("addTask");
+const taskInput = document.getElementById("newTask");
+
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 function renderTasks() {
@@ -15,7 +17,7 @@ function renderTasks() {
   }
 }
 
-document.getElementById("addTask").addEventListener("click", () => {
+addTask.addEventListener("click", () => {
   const taskName = taskInput.value.trim();
   if (taskName) {
     tasks.push({ name: taskName });
